@@ -1,8 +1,8 @@
-from amazon.api import AmazonAPI
-from wapy.api import Wapy
-import pandas as pd
+import tweepy
+import constants
 
 if __name__ == '__main__':
-    print("Testing")
-    # wapy = Wapy()
-    # amazon = AmazonAPI()
+    auth = tweepy.OAuth2AppHandler(
+        constants.TWITTER_API_KEY, constants.TWITTER_SECRET_KEY
+    )
+    api = tweepy.API(auth)
